@@ -6,6 +6,16 @@
     margin-right:auto;
     overflow:hidden;
 
+    &--nopadding-until-medium {
+        padding-left:0;
+        padding-right:0;
+
+        @mixin atSmall {
+            padding-left:18px;
+            padding-right:18px;
+        }
+    }
+
     &--medium {
         max-width:976px;
     }
