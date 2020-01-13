@@ -13,6 +13,7 @@ class MobileMenu {
     toggleTheMenu() {
        this.menuContent.classList.toggle('site-header__menu-content--isVisible');
        this.siteHeader.classList.toggle('site-header--isExpanded');
+       this.menuIcon.classList.toggle('site-header__menu-icon--close-x');
     }
 }
 
