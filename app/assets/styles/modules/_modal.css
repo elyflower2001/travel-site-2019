@@ -7,6 +7,16 @@
     background:rgba($white, 0.94);
     z-index:5;
     display:flex;
+    opacity:0;
+    visibility:hidden;
+    transform:scale(1.2);
+    transition:all 0.3s ease-out;
+
+    &--isVisible {
+        opacity:1;
+        visibility:visible;
+        transform:scale(1);
+    }
 
     &__inner {
         flex:1;
