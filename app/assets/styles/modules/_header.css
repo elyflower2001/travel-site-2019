@@ -8,6 +8,11 @@
     @mixin atMedium {
         /*background-color:rgba(47, 85, 114, .3);*/
         background-color:rgba($mainBlue, .3);
+        position:fixed;
+
+        &--dark {
+            background-color:rgba($darkerBlue, .85);
+        }
     }
 
     &--isExpanded {
@@ -27,12 +32,19 @@
         background-color:$mainBlue;
         padding:13px 29px;
         left:50%;
-        transform:translateX(-50%);
+        transition:transform 0.3s ease-out;
+        transform-origin: 50% 0;
+        transform:translateX(-50%) scale(0.8);
+       
 
         @mixin atMedium {
             left:auto;
             transform:translateX(0);
             padding:25px 36px;
+
+            .site-header--dark & {
+                transform:scale(0.55);
+            }
         }
     }
 
