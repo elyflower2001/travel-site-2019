@@ -2,16 +2,32 @@ import '../styles/styles.css';
 import MobileMenu from './modules/MobileMenu';
 import RevealOnScroll from './modules/RevealOnScroll';
 import StickyHeader from './modules/StyckyHeader';
-import Modal from './modules/Modal';
 
 if(module.hot) {
     module.hot.accept();
 }
 
 /* Mobile menu */
-let mobileMenu = new MobileMenu();
-let stickyHeader = new StickyHeader();
-let modal = new Modal();
-//let revealOnScroll = new RevealOnScroll();
+new MobileMenu();
+new StickyHeader();
 new RevealOnScroll(document.querySelectorAll('.feature-item'), 75);
 new RevealOnScroll(document.querySelectorAll('.testimonial'), 60);
+
+let modal;
+
+document.querySelectorAll('.open-modal').forEach(el => {
+    el.addEventListener('click', e => {
+        e.preventDefault();
+        //console.log('click on button');
+        if(typeof modal == 'undefined') {
+            //console.log('undefined');
+            import(/* webpackChunkName: 'modal' */ './modules/Modal').then(x => {
+                modal = new x.default();
+                setTimeout( () => {modal.openTheModal()}, 20);
+            }).catch(console.log('there was a problem!'));
+        }else{
+            //console.log('defined');
+            modal.openTheModal();
+        }
+    });
+});
