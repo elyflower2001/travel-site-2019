@@ -34,7 +34,7 @@ class ClientArea {
             this.form.remove();
             this.contentArea.innerHTML = response.data;
         }).catch( () => {
-            this.contentArea.innerHTML = `<p class="content-area__error">The pw is not ok, try again</p>`;
+            this.contentArea.innerHTML = `<p class="client-area__error">The pw is not ok, try again</p>`;
             this.field.value = '';
             this.field.focus();
         } );
