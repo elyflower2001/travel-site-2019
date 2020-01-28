@@ -5,6 +5,22 @@ import RevealOnScroll from './modules/RevealOnScroll';
 import StickyHeader from './modules/StyckyHeader';
 import ClientArea from './modules/ClientArea';
 
+// React related code
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function MyReactComponent() {
+    return(
+        <div>
+            <h1 className="section-title section-title--blue">This is my react component</h1>
+            <p>The sky is blue</p>
+        </div>
+    )
+}
+
+ReactDOM.render(<MyReactComponent />, document.querySelector('#react-example'));
+
+
 if(module.hot) {
     module.hot.accept();
 }
