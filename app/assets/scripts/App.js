@@ -9,14 +9,8 @@ import ClientArea from './modules/ClientArea';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function MyReactComponent() {
-    return(
-        <div>
-            <h1 className="section-title section-title--blue">This is my react component</h1>
-            <p>The sky is blue</p>
-        </div>
-    )
-}
+// import react component
+import MyReactComponent from './modules/MyReactComponent';
 
 ReactDOM.render(<MyReactComponent />, document.querySelector('#react-example'));
 
